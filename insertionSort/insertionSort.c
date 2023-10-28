@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void insertion_sort(int in_array[], int length) {
     for (int i = 1; i < length; i++) {
@@ -19,7 +20,9 @@ int main() {
 
     printf("5 adet sayı giriniz:\n");
     for (int i = 0; i < 5; i++) {
-        scanf("%d", &dizi[i]);
+        char input[100];
+        scanf("%s", input);
+        dizi[i] = (int)strtol(input, NULL, 10); // strtol ile dönüşüm
     }
 
     // Insertion Sort ile sıralama
